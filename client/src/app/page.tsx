@@ -1,8 +1,12 @@
 import About from "./componets/about";
-import ContactCTA from "./componets/contact";
+import ContactForm from "./componets/contact";
+import ContactCTA from "./componets/cta";
+import FAQ from "./componets/faq";
 import Footer from "./componets/footer";
 import Hero from "./componets/hero";
+import Location from "./componets/location";
 import Navbar from "./componets/navbar";
+import Process from "./componets/proces";
 import Projects from "./componets/projects";
 import Services from "./componets/service";
 import Stats from "./componets/states";
@@ -20,8 +24,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Services/>
       <Stats/>
       <Projects/>
+      <Process/>
       <Testimonials/>
       <ContactCTA/>
+      <ContactForm/>
+      <FAQ/>
+      <Location/>
       <Footer/>
     </>
   );
