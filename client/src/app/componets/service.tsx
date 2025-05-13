@@ -1,52 +1,113 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
 const services = [
-    {
-      title: "Web Development",
-      desc: "Custom websites, eCommerce, and CMS using modern stacks.",
-    },
-    {
-      title: "App Development",
-      desc: "React Native and Flutter apps tailored to your business needs.",
-    },
-    {
-      title: "Digital Marketing",
-      desc: "SEO, SEM, Social Media & Ad campaigns with ROI-driven strategies.",
-    },
-    {
-      title: "Brand Strategy",
-      desc: "Identity design, tone, voice and storytelling for your brand.",
-    },
-    {
-      title: "Custom Software",
-      desc: "Internal tools, ERPs, CRMs, dashboards, and automation systems.",
-    },
-    {
-      title: "Consulting & Strategy",
-      desc: "Get expert guidance to scale or modernize your business digitally.",
-    },
-  ];
-  
-  const Services = () => {
-    return (
-      <section id="services" className="bg-[#F9FAFB] py-20 px-6 md:px-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Services
-          </h2>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            We offer a full suite of digital services to help you build, grow, and optimize your brand presence.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white shadow-md rounded-xl p-6 text-left hover:shadow-lg transition">
-                <h3 className="text-xl font-semibold text-indigo-600 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
+  {
+    title: "Web Development",
+    desc: "Custom websites, eCommerce, and CMS using modern stacks.",
+    icon: "/images/webdevelopment.png",
+  },
+  {
+    title: "App Development",
+    desc: "React Native and Flutter apps tailored to your business needs.",
+    icon: "/images/appdevelopment.png",
+  },
+  {
+    title: "Digital Marketing",
+    desc: "SEO, SEM, Social Media & Ad campaigns with ROI-driven strategies.",
+    icon: "/images/appdevelopment.png",
+  },
+  {
+    title: "Brand Strategy",
+    desc: "Identity design, tone, voice and storytelling for your brand.",
+    icon: "/icons/brand.svg",
+  },
+  {
+    title: "Custom Software",
+    desc: "Internal tools, ERPs, CRMs, dashboards, and automation systems.",
+    icon: "/icons/software.svg",
+  },
+  {
+    title: "Consulting & Strategy",
+    desc: "Get expert guidance to scale or modernize your business digitally.",
+    icon: "/icons/consulting.svg",
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1 },
+  }),
+};
+
+const Services = () => {
+  return (
+    <section id="services" className="bg-[#F9FAFB] py-20 px-6 md:px-20 overflow-hidden">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Heading */}
+        <motion.h2
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.95 },
+            show: {
+              opacity: 1,
+              scale: [1, 1.02, 1],
+              transition: { duration: 0.8, ease: 'easeInOut', repeat: Infinity, repeatDelay: 4 },
+            },
+          }}
+          className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 inline-block"
+        >
+          Our Services
+        </motion.h2>
+
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto"
+        >
+          We offer a full suite of digital services to help you build, grow, and optimize your brand presence.
+        </motion.p>
+
+        {/* Service Cards */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-xl p-6 text-left border hover:shadow-xl transition-all"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false }}
+              custom={index}
+              variants={fadeUp}
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="mb-4 flex justify-center">
+                <Image
+                  src={service.icon}
+                  alt={`${service.title} icon`}
+                  width={100}
+                  height={100}
+                  className="w-30 h-30 object-contain"
+                />
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-semibold text-indigo-600 mb-2">{service.title}</h3>
+              <p className="text-gray-600">{service.desc}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    );
-  };
-  
-  export default Services;
-  
+      </div>
+    </section>
+  );
+};
+
+export default Services;

@@ -2,6 +2,7 @@ import About from "./componets/about";
 import ContactForm from "./componets/contact";
 import ContactCTA from "./componets/cta";
 import FAQ from "./componets/faq";
+import FloatingCTA from "./componets/floatingcta";
 import Footer from "./componets/footer";
 import Hero from "./componets/hero";
 import Location from "./componets/location";
@@ -17,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="mt-15">{children}
+      <main className="mt-16">{children}
         <Hero/>
       </main>
       <About/>
@@ -30,6 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <ContactForm/>
       <FAQ/>
       <Location/>
+      <FloatingCTA/>
       <Footer/>
     </>
   );

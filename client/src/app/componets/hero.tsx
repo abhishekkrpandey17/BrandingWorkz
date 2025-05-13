@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
       <Image
@@ -28,7 +28,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6"
       >
-        <h1 className="text-4xl md:text-6xl font-bold text-white max-w-3xl leading-tight mt-50">
+        <h1 className="text-4xl md:text-6xl font-bold text-white max-w-3xl leading-tight mt-60">
           Build Brands That <span className="text-indigo-400">Lead</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl">

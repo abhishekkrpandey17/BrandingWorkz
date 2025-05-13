@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -15,14 +17,28 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  // Prevent scrolling on mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
+  }, [mobileMenuOpen]);
+
+  // Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+    if (mobileMenuOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/35 backdrop-blur-md shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <span className="text-2xl font-bold text-indigo-600 tracking-tight">
-            Brand<span className="text-gray-900">Workz</span>
-          </span>
+        <Link href="/" className="text-2xl font-bold text-indigo-600 ">
+          Brand<span className="text-gray-900">Workz</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -31,52 +47,60 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-indigo-600 transition font-medium"
+              className="relative font-medium text-black hover:text-blue-600 transition "
             >
               {link.name}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-600 group-hover:w-full transition-all duration-300 "></span>
             </Link>
           ))}
           <Link
             href="#quote"
-            className="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
+            className="px-4 py-2 border-2 border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-600 hover:text-indigo- transition shadow-lg hover:shadow-indigo-400"
           >
             Get Quote
           </Link>
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-700"
-          >
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t px-6 py-4 space-y-4">
+      {/* Mobile Dropdown */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+          ref={menuRef}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+          className="absolute right-4 top-20 w-[80%] max-w-xs bg-white rounded-xl shadow-lg z-40 p-6 border flex flex-col gap-4"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="block text-gray-700 font-medium hover:text-indigo-600 transition"
               onClick={() => setMobileMenuOpen(false)}
+              className="text-gray-700 font-medium hover:text-indigo-600"
             >
               {link.name}
             </Link>
           ))}
           <Link
             href="#quote"
-            className="block bg-indigo-600 text-white text-center px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
             onClick={() => setMobileMenuOpen(false)}
+            className="text-center border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-600 hover:text-indigo-900 transition"
           >
             Get Quote
           </Link>
-        </div>
-      )}
+        </motion.div>
+        
+        )}
+      </AnimatePresence>
     </header>
   );
 };
