@@ -52,11 +52,11 @@ const Stats = () => {
         <p className="text-gray-500 mt-2 text-lg">Results that reflect our impact</p>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center ">
         {stats.map((stat, i) => (
           <motion.div
             key={i}
-            className="group relative rounded-xl border p-6 hover:shadow-xl transition-all hover:scale-[1.04]"
+            className="group relative rounded-xl border p-6 hover:shadow-xl transition-all hover:scale-[1.04] hover:bg-blue-50 hover:shadow-blue-200 hover:border-1 hover:border-blue-200 duration-800 transform hover:rotate-[360deg] hover:-translate-y-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
@@ -69,7 +69,7 @@ const Stats = () => {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <motion.p className="text-3xl font-bold text-[#4F46E5] group-hover:text-[#1E1E2F] transition">
+            <motion.p className="text-3xl font-bold text-[#4F46E5] group-hover:text-[#1E1E2F] transition ">
               {stat.value}
             </motion.p>
             <p className="text-[#333] font-medium mt-1">{stat.label}</p>

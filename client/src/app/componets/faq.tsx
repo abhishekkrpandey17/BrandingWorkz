@@ -65,7 +65,7 @@ const FAQ = () => {
           {faqs.map((item, index) => (
             <motion.div
               key={index}
-              className="border border-gray-200 rounded-xl p-4"
+              className="border border-gray-200 rounded-xl p-4 transform duration-500 hover:scale-107"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}

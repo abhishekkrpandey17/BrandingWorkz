@@ -86,7 +86,7 @@ const ContactForm = () => {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-xl bg-gray-100"
+              className="w-full px-4 py-3 border rounded-xl bg-gray-100 transform duration-500 hover:scale-107"
             />
           </motion.div>
 
@@ -105,7 +105,7 @@ const ContactForm = () => {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-xl bg-gray-50"
+              className="w-full px-4 py-3 border rounded-xl bg-gray-50 transform duration-500 hover:scale-107"
             />
           </motion.div>
 
@@ -124,7 +124,7 @@ const ContactForm = () => {
               value={form.message}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-xl bg-gray-50"
+              className="w-full px-4 py-3 border rounded-xl bg-gray-50 transform duration-500 hover:scale-107"
             />
           </motion.div>
 
@@ -139,7 +139,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="bg-indigo-600 text-white px-6 py-3 rounded-xl hover:bg-indigo-700 hover:scale-105 transition-all"
+              className="px-4 py-2 border-2 border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-600 hover:text-white transition shadow-lg hover:shadow-indigo-400 duration-900 transform hover:rotate-[360deg]"
             >
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>

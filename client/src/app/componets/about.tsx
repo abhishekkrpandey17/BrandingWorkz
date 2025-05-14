@@ -43,14 +43,14 @@ const About = () => {
         </motion.p>
 
         {/* Cards Grid */}
-        <div className="mt-6 grid md:grid-cols-2 gap-8 ">
+        <div className="mt-6 grid md:grid-cols-2 gap-5 ">
           <motion.div
             whileHover={{ scale: 1.03 }}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false }}
             variants={fadeIn}
-            className="p-6 rounded-xl border hover:shadow-xl transition-all "
+            className="p-6 rounded-xl border hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 hover:-translate-y-2"
           >
             <h3 className="text-xl font-semibold text-indigo-600 mb-2">Our Mission</h3>
             <p className="text-gray-600">
@@ -65,7 +65,7 @@ const About = () => {
             whileInView="show"
             viewport={{ once: false }}
             variants={fadeIn}
-            className="p-6 rounded-xl border hover:shadow-xl transition-all"
+            className="p-6 rounded-xl border hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 hover:-translate-y-2"
           >
             <h3 className="text-xl font-semibold text-indigo-600 mb-2">Why Choose Us</h3>
             <p className="text-gray-600">

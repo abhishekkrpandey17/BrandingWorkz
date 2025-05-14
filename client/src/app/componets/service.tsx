@@ -83,13 +83,13 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl p-6 text-left border hover:shadow-xl transition-all"
+              className="p-6 rounded-xl border hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 duration-300 transform hover:rotate-[-2deg] hover:-translate-y-2"
               initial="hidden"
               whileInView="show"
               viewport={{ once: false }}
               custom={index}
               variants={fadeUp}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.07 }}
             >
               <div className="mb-4 flex justify-center">
                 <Image

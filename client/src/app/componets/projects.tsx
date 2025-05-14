@@ -64,15 +64,15 @@ const Projects = () => {
         {projects.map((project, i) => (
           <motion.div
             key={i}
-            className="rounded-xl overflow-hidden shadow group border hover:shadow-xl transition-all"
+            className="p-6 rounded-xl border hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
             variants={fadeUp}
             custom={i}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.1 }}
           >
-            <div className="relative w-full h-60 overflow-hidden">
+            <div className="relative w-full h-60 overflow-hidden ">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -80,7 +80,7 @@ const Projects = () => {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="p-6 bg-white">
+            <div className="p-6 ">
               <h3 className="text-xl font-semibold text-indigo-600">{project.title}</h3>
               <p className="text-gray-600 text-sm mt-1">{project.category}</p>
             </div>

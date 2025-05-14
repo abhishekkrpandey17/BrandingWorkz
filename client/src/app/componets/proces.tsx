@@ -93,7 +93,7 @@ const Process = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md text-left hover:shadow-xl hover:scale-[1.03] transition-all"
+              className="bg-white p-6 rounded-xl shadow-md text-left border hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 duration-200 transform hover:rotate-[-3deg] hover:-translate-y-6 "
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}

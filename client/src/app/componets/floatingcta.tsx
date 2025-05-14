@@ -9,7 +9,7 @@ export default function FloatingCTA() {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 1.5 }}
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-700 rounded-full shadow-lg"
+      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-700 rounded-full shadow-lg hover:shadow-green-600 duration-400 transform hover:-translate-y-3"
     >
       <a
         href="https://wa.me/919876543210" // Replace with your WhatsApp number
