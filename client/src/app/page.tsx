@@ -11,7 +11,6 @@ import Process from "./componets/proces";
 import Projects from "./componets/projects";
 import Services from "./componets/service";
 import Stats from "./componets/states";
-import Testimonials from "./componets/testimonial";
 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -26,7 +25,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Stats/>
       <Projects/>
       <Process/>
-      <Testimonials/>
       <ContactCTA/>
       <ContactForm/>
       <FAQ/>

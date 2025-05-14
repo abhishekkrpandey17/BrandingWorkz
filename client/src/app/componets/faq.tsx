@@ -35,7 +35,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-white py-20 px-6 md:px-20" id="faq">
+    <section className="bg-[#F9FAFB] py-20 px-6 md:px-20" id="faq">
       <motion.div
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 30 }}

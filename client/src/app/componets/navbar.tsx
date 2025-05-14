@@ -93,7 +93,7 @@ const Navbar = () => {
           <Link
             href="#quote"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-center border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-600 hover:text-indigo-900 transition"
+            className="text-center border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-600 hover:text-white transition"
           >
             Get Quote
           </Link>

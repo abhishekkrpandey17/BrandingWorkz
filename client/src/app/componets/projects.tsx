@@ -7,17 +7,17 @@ const projects = [
   {
     title: "Beauty Salon Branding",
     category: "Brand Identity",
-    image: "/projects/project1.jpg",
+    image: "/images/bwproject.png",
   },
   {
     title: "Startup Landing Page",
     category: "Web Design",
-    image: "/projects/project2.jpg",
+    image: "/images/bwproject.png",
   },
   {
     title: "CRM Dashboard UI",
     category: "Custom Software",
-    image: "/projects/project3.jpg",
+    image: "/images/bwproject.png",
   },
 ];
 
@@ -32,7 +32,7 @@ const fadeUp = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-white py-20 px-6 md:px-20 overflow-hidden">
+    <section id="projects" className="bg-[#F9FAFB] py-20 px-6 md:px-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

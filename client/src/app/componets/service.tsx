@@ -17,22 +17,22 @@ const services = [
   {
     title: "Digital Marketing",
     desc: "SEO, SEM, Social Media & Ad campaigns with ROI-driven strategies.",
-    icon: "/images/appdevelopment.png",
+    icon: "/images/digitalmarketing.png",
   },
   {
     title: "Brand Strategy",
     desc: "Identity design, tone, voice and storytelling for your brand.",
-    icon: "/icons/brand.svg",
+    icon: "/images/strategy.png",
   },
   {
     title: "Custom Software",
     desc: "Internal tools, ERPs, CRMs, dashboards, and automation systems.",
-    icon: "/icons/software.svg",
+    icon: "/images/customsoftware.png",
   },
   {
     title: "Consulting & Strategy",
     desc: "Get expert guidance to scale or modernize your business digitally.",
-    icon: "/icons/consulting.svg",
+    icon: "/images/cunsulting.svg",
   },
 ];
 
@@ -97,7 +97,7 @@ const Services = () => {
                   alt={`${service.title} icon`}
                   width={100}
                   height={100}
-                  className="w-30 h-30 object-contain"
+                  className="w-35 h-35 object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">{service.title}</h3>

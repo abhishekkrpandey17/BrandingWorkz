@@ -56,7 +56,7 @@ const cardVariant = {
 
 const Process = () => {
   return (
-    <section className="bg-[#F9FAFB] py-20 px-6 md:px-20" id="process">
+    <section className="bg-white py-20 px-6 md:px-20" id="process">
       <div className="max-w-6xl mx-auto text-center">
         {/* Animated Heading */}
         <motion.h2
