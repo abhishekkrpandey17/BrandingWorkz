@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="mt-16">{children}
+      <main className="mt-15">{children}
         <Hero/>
       </main>
       <About/>

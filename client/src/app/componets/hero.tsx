@@ -37,13 +37,13 @@ const Hero = () => {
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Link
             href="#quote"
-            className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition"
+            className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition duration-900 transform hover:rotate-y-[360deg]"
           >
             Let’s Talk
           </Link>
           <Link
             href="#projects"
-            className="px-6 py-3 border border-white text-white rounded-xl font-medium hover:bg-white hover:text-black transition"
+            className="px-6 py-3 border border-white text-white rounded-xl font-medium hover:bg-white hover:text-black transition hover:border-blue-500 duration-900 transform hover:rotate-y-[360deg]"
           >
             View Portfolio
           </Link>
