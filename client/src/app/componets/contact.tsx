@@ -55,7 +55,7 @@ const ContactForm = () => {
             ease: "easeInOut",
           }}
         >
-          Get a Free Quote
+          Contact Us
         </motion.h2>
 
         {/* Subheading */}
