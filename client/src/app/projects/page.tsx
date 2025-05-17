@@ -1,13 +1,19 @@
+"use client";
 import React from 'react'
 import Navbar from '../componets/navbar'
 import Footer from '../componets/footer'
 import ProjectsHero from '../componets/projecthero'
 import Projects from '../componets/projects'
+import QuoteModal from '../componets/getaquote'
 
-const page = () => {
+const Page = () => {
+  const [showQuoteModal, setShowQuoteModal] = React.useState(false);
   return (
     <>
-    <Navbar/>
+    <header>
+        <Navbar onQuoteClick={() => setShowQuoteModal(true)} />
+        <QuoteModal isOpen={showQuoteModal} onClose={() => setShowQuoteModal(false)} />
+      </header>
     <main className="mt-15">
     <ProjectsHero/>
     </main>
@@ -18,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
