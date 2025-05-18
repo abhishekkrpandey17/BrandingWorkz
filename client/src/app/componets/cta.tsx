@@ -1,9 +1,13 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const ContactCTA = () => {
+  const onQuoteClick = () => {
+    // You can add your logic here, e.g., open a modal or navigate to a contact page
+    alert('Get a Free Quote clicked!');
+  };
+
   return (
     <section
       id="contact"
@@ -38,17 +42,17 @@ const ContactCTA = () => {
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: false }}
       >
-        <Link
-          href="#quote"
+        <button
+          onClick={onQuoteClick}
           className="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-500 hover:scale-105 transition-all inline-block"
         >
           Get a Free Quote
-        </Link>
+        </button>
       </motion.div>
     </section>
   );

@@ -73,7 +73,7 @@ interface CardProps {
 
 const Card = ({ member }: CardProps) => (
   <motion.div
-    className="bg-white rotate-[-3deg] rounded-xl shadow-md  overflow-hidden text-center p-6 w-full max-w-sm hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 duration-300 transform hover:rotate-[.5deg] hover:-translate-y-2"
+    className="bg-white rounded-xl shadow-md  overflow-hidden text-center p-6 w-full max-w-sm hover:shadow-2xl hover:bg-blue-50 hover:shadow-blue-200 transition-all hover:border-1 hover:border-blue-200 duration-300 transform hover:rotate-[-0.7deg] hover:-translate-y-2"
     variants={fadeIn}
     initial="hidden"
     whileInView="show"

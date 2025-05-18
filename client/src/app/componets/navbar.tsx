@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ onQuoteClick }) => {
     { name: "About", href: "/about" },
     { name: "Services", href: "/ourservices" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "./#contact" },
   ];
 
   // Prevent scrolling on mobile menu open

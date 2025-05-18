@@ -22,3 +22,14 @@ body.menu-open {
 html {
   scroll-behavior: smooth;
 }
+
+/* Required for 3D flip */
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}

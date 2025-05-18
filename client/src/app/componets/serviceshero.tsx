@@ -28,7 +28,7 @@ const ServicesHero = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-blue-400">
-        We Build <span className="text-white ">We Solve </span><span>We Scale</span>
+        We Build <span className="text-white ">We Solve </span><span className="text-yellow-500">We Scale</span>
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
           Discover the solutions we craft to elevate brands — from development and marketing to automation and growth.

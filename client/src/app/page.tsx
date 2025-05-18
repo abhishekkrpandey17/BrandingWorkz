@@ -33,7 +33,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Stats/>
       <Projects/>
       <Process/>
+
+
       <ContactCTA/>
+
+      
       <ContactForm/>
       <FAQ/>
       <Location/>

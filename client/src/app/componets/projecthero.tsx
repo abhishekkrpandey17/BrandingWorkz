@@ -27,7 +27,7 @@ const ProjectsHero = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Featured <span className="text-indigo-300">Projects</span>
+        Where Ideas <span className="text-indigo-300">Take Shape</span>
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
           Explore our work – web, mobile, design and marketing projects that helped brands grow and scale.
