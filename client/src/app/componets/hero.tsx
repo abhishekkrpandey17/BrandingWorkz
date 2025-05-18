@@ -50,7 +50,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <Link
-            href="#floatingcta"
+            href="/sociallinkspage"
             className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition duration-900 transform hover:rotate-y-[360deg]"
           >
             Let’s Talk

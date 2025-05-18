@@ -35,7 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Process/>
 
 
-      <ContactCTA/>
+      <ContactCTA onQuoteClick={() => setShowQuoteModal(true)} />
 
       
       <ContactForm/>

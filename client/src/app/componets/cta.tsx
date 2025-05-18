@@ -1,13 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-const ContactCTA = () => {
-  const onQuoteClick = () => {
-    // You can add your logic here, e.g., open a modal or navigate to a contact page
-    alert('Get a Free Quote clicked!');
-  };
+interface ContactCTAProps {
+  onQuoteClick: () => void;
+}
 
+const ContactCTA = ({ onQuoteClick }: ContactCTAProps) => {
   return (
     <section
       id="contact"
@@ -16,16 +15,13 @@ const ContactCTA = () => {
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-4 inline-block"
         initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{
-          opacity: 1,
-          scale: [1, 1.02, 1],
-        }}
+        whileInView={{ opacity: 1, scale: [1, 1.02, 1] }}
         viewport={{ once: false }}
         transition={{
           duration: 0.8,
           repeat: Infinity,
           repeatDelay: 4,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       >
         Let’s Build Something Amazing
